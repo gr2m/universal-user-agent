@@ -2,6 +2,11 @@
 
 > Get a user agent string in both browser and node
 
+[![@latest](https://img.shields.io/npm/v/universal-user-agent.svg)](https://www.npmjs.com/package/universal-user-agent)
+[![Build Status](https://travis-ci.com/gr2m/universal-user-agent.svg?branch=master)](https://travis-ci.com/gr2m/universal-user-agent)
+[![Coverage Status](https://coveralls.io/repos/github/gr2m/universal-user-agent/badge.svg)](https://coveralls.io/github/gr2m/universal-user-agent)
+[![Greenkeeper](https://badges.greenkeeper.io/gr2m/universal-user-agent.svg)](https://greenkeeper.io/)
+
 ```js
 const getUserAgent = require('universal-user-agent')
 const userAgent = getUserAgent()
