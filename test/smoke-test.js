@@ -31,4 +31,27 @@ describe('smoke', () => {
     expect(getUserAgent()).to.be.a('string')
     expect(getUserAgent().length).to.be.above(10)
   })
+
+  if (!process.browser) { // test on node only
+    const proxyquire = require('proxyquire').noCallThru()
+    it('works around wmic error on Windows (#5)', () => {
+      const getUserAgent = proxyquire('..', {
+        'os-name': () => {
+          throw new Error('Command failed: wmic os get Caption')
+        }
+      })
+
+      expect(getUserAgent()).to.equal('Windows <version undetectable>')
+    })
+
+    it('does not swallow unexpected errors', () => {
+      const getUserAgent = proxyquire('..', {
+        'os-name': () => {
+          throw new Error('oops')
+        }
+      })
+
+      expect(getUserAgent).to.throw('oops')
+    })
+  }
 })
