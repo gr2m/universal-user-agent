@@ -33,3 +33,9 @@ jobs:
       node_js: lts/*
       env: semantic-release
       script: npm run semantic-release
+
+# https://github.com/cypress-io/cypress/issues/4069
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
