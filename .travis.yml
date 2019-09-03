@@ -16,26 +16,16 @@ stages:
 jobs:
   include:
     - stage: test
-      node_js: 12
+      node_js: 10
       script: npm run test
     - node_js: 8
       script: npm run test
-    - node_js: 10
-      env: Node 10 & coverage upload
-      script:
-        - npm run test
-        - npm run coverage:upload
-    - node_js: lts/*
-      env: browser tests
-      script: npm run test:browser
+    - node_js: 12
+      script: npm run test
 
     - stage: release
       node_js: lts/*
       env: semantic-release
-      script: npm run semantic-release
-
-# https://github.com/cypress-io/cypress/issues/4069
-addons:
-  apt:
-    packages:
-      - libgconf-2-4
+      script:
+        - npm run build
+        - npx semantic-release
