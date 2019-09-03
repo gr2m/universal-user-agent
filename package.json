@@ -6,42 +6,58 @@
   "keywords": [],
   "author": "Gregor Martynus (https://github.com/gr2m)",
   "license": "ISC",
-  "main": "index.js",
-  "browser": "browser.js",
+  "browser": {
+    "./pkg/dist-src/node.js": "./pkg/dist-src/browser.js"
+  },
   "types": "index.d.ts",
   "scripts": {
-    "coverage": "nyc report --reporter=html && open coverage/index.html",
-    "coverage:upload": "nyc report --reporter=text-lcov | coveralls",
-    "pretest": "standard",
-    "test": "nyc mocha \"test/*-test.js\"",
-    "test:browser": "cypress run --browser chrome",
-    "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once"
+    "build": "pika build",
+    "lint": "prettier --check '{src,test}/**/*' README.md package.json",
+    "lint:fix": "prettier --write '{src,test}/**/*' README.md package.json",
+    "test": "jest"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "coveralls": "^3.0.2",
-    "cypress": "^3.1.0",
-    "mocha": "^6.2.0",
-    "proxyquire": "^2.1.0",
-    "nyc": "^14.0.0",
-    "sinon": "^7.2.4",
-    "sinon-chai": "^3.2.0",
-    "standard": "^14.0.0",
-    "test": "^0.6.0",
+    "@gr2m/pika-plugin-build-web": "^0.6.0-issue-84.1",
+    "@pika/pack": "^0.5.0",
+    "@pika/plugin-build-node": "^0.6.0",
+    "@pika/plugin-ts-standard-pkg": "^0.6.0",
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
     "semantic-release": "^15.9.15",
-    "travis-deploy-once": "^5.0.7"
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.6.2"
   },
   "dependencies": {
-    "os-name": "^3.0.0"
+    "os-name": "^3.1.0"
   },
-  "standard": {
-    "globals": [
-      "describe",
-      "it",
-      "beforeEach",
-      "afterEach",
-      "expect"
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-ts-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@gr2m/pika-plugin-build-web"
+      ]
+    ]
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./pkg"
+        }
+      ]
     ]
   }
 }
