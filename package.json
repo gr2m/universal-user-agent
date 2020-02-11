@@ -6,8 +6,12 @@
   "keywords": [],
   "author": "Gregor Martynus (https://github.com/gr2m)",
   "license": "ISC",
-  "browser": {
-    "./pkg/dist-src/node.js": "./pkg/dist-src/browser.js"
+  "exports": {
+    ".": {
+      "browser": "./src/browser.ts",
+      "deno": "./src/deno.ts",
+      "node": "./src/node.ts"
+    }
   },
   "types": "index.d.ts",
   "scripts": {
