@@ -10,6 +10,6 @@ export function getUserAgent(): string {
       return "Windows <version undetectable>";
     }
 
-    throw error;
+    return "<environment undetectable>";
   }
 }
