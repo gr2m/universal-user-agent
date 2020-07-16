@@ -6,9 +6,6 @@
   "keywords": [],
   "author": "Gregor Martynus (https://github.com/gr2m)",
   "license": "ISC",
-  "browser": {
-    "./pkg/dist-src/node.js": "./pkg/dist-src/browser.js"
-  },
   "types": "index.d.ts",
   "scripts": {
     "build": "pika build",
@@ -28,9 +25,7 @@
     "ts-jest": "^26.0.0",
     "typescript": "^3.6.2"
   },
-  "dependencies": {
-    "os-name": "^3.1.0"
-  },
+  "dependencies": {},
   "@pika/pack": {
     "pipeline": [
       [
