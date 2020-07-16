@@ -28,9 +28,7 @@
     "ts-jest": "^26.0.0",
     "typescript": "^3.6.2"
   },
-  "dependencies": {
-    "os-name": "^3.1.0"
-  },
+  "dependencies": {},
   "@pika/pack": {
     "pipeline": [
       [
