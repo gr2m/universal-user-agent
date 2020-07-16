@@ -6,9 +6,6 @@
   "keywords": [],
   "author": "Gregor Martynus (https://github.com/gr2m)",
   "license": "ISC",
-  "browser": {
-    "./pkg/dist-src/node.js": "./pkg/dist-src/browser.js"
-  },
   "types": "index.d.ts",
   "scripts": {
     "build": "pika build",
