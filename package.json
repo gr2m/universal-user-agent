@@ -2,7 +2,7 @@
   "name": "universal-user-agent",
   "version": "0.0.0-development",
   "description": "Get a user agent string in both browser and node",
-  "repository": "https://github.com/gr2m/universal-user-agent.git",
+  "repository": "github:gr2m/universal-user-agent",
   "keywords": [],
   "author": "Gregor Martynus (https://github.com/gr2m)",
   "license": "ISC",
