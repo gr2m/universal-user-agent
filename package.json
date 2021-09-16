@@ -12,9 +12,12 @@
   "scripts": {
     "lint": "prettier --check '*.{js,json,md}'",
     "lint:fix": "prettier --write '*.{js,json,md}'",
-    "test": "node test.js"
+    "test": "npm run test:code && npm run test:types",
+    "test:code": "node test.js",
+    "test:types": "tsd"
   },
   "devDependencies": {
-    "prettier": "^2.0.0"
+    "prettier": "^2.0.0",
+    "tsd": "^0.17.0"
   }
 }
