@@ -15,10 +15,6 @@ const userAgent = getUserAgent();
 // in node: Node.js/v8.9.4 (macOS High Sierra; x64)
 ```
 
-## Credits
-
-The Node implementation was originally inspired by [default-user-agent](https://www.npmjs.com/package/default-user-agent).
-
 ## License
 
 [ISC](LICENSE.md)
