@@ -1,4 +1,4 @@
-import assert from "assert/strict";
+import assert from "node:assert";
 
 import { getUserAgent } from "./index.js";
 
