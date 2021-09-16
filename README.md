@@ -4,7 +4,6 @@
 
 [![@latest](https://img.shields.io/npm/v/universal-user-agent.svg)](https://www.npmjs.com/package/universal-user-agent)
 [![Build Status](https://github.com/gr2m/universal-user-agent/workflows/Test/badge.svg)](https://github.com/gr2m/universal-user-agent/actions?query=workflow%3ATest+branch%3Amaster)
-[![Greenkeeper](https://badges.greenkeeper.io/gr2m/universal-user-agent.svg)](https://greenkeeper.io/)
 
 ```js
 const { getUserAgent } = require("universal-user-agent");
