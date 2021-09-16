@@ -1,4 +1,4 @@
-export function getUserAgent(): string {
+export function getUserAgent() {
   if (typeof navigator === "object" && "userAgent" in navigator) {
     return navigator.userAgent;
   }
