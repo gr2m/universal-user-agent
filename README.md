@@ -3,7 +3,7 @@
 > Get a user agent string across all JavaScript Runtime Environments
 
 [![@latest](https://img.shields.io/npm/v/universal-user-agent.svg)](https://www.npmjs.com/package/universal-user-agent)
-[![Build Status](https://github.com/gr2m/universal-user-agent/workflows/Test/badge.svg)](https://github.com/gr2m/universal-user-agent/actions?query=workflow%3ATest+branch%3Amaster)
+[![Build Status](https://github.com/gr2m/universal-user-agent/workflows/Test/badge.svg)](https://github.com/gr2m/universal-user-agent/actions/workflows/test.yml?query=workflow%3ATest)
 
 ```js
 const { getUserAgent } = require("universal-user-agent");
