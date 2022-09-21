@@ -2,15 +2,17 @@ name: Update Prettier
 "on":
   push:
     branches:
-      - greenkeeper/prettier-*
+      - renovate/prettier-*
 jobs:
   update_prettier:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: lts/*
+          version: 12
+          cache: npm
+          node-version: 16
       - run: npm ci
       - run: npm run lint:fix
       - uses: gr2m/create-or-update-pull-request-action@v1.x
