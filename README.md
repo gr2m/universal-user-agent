@@ -6,8 +6,7 @@
 [![Build Status](https://github.com/gr2m/universal-user-agent/workflows/Test/badge.svg)](https://github.com/gr2m/universal-user-agent/actions/workflows/test.yml?query=workflow%3ATest)
 
 ```js
-const { getUserAgent } = require("universal-user-agent");
-// or import { getUserAgent } from "universal-user-agent";
+import { getUserAgent } from "universal-user-agent";
 
 const userAgent = getUserAgent();
 // userAgent will look like this
