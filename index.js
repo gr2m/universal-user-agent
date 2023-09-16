@@ -9,9 +9,5 @@ export function getUserAgent() {
     })`;
   }
 
-  if (typeof EdgeRuntime === "string") {
-    return "Edge Runtime";
-  }
-
   return "<environment undetectable>";
 }
