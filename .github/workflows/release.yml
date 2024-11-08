@@ -8,6 +8,8 @@ name: Release
       - "*.x"
 jobs:
   release:
+    permissions:
+      id-token: write # to enable use of OIDC for npm provenance
     name: release
     runs-on: ubuntu-latest
     steps:

@@ -19,5 +19,8 @@
   "devDependencies": {
     "prettier": "^2.0.0",
     "tsd": "^0.17.0"
+  },
+  "publishConfig": {
+    "provenance": true
   }
 }
